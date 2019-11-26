@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yourgroup.module.basics.repository.SampleRepository">
+	<resultMap id="BaseResultMap" type="com.yourgroup.module.basics.domain.Sample">
+		<result column="SAMPLE_TABLE_id" property="id" jdbcType="DECIMAL" />
+		<result column="SAMPLE_TABLE_text" property="text" jdbcType="VARCHAR" />
+		<result column="SAMPLE_TABLE_date" property="date" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		SAMPLE_TABLE.id as SAMPLE_TABLE_id,
+		SAMPLE_TABLE.text as SAMPLE_TABLE_text,
+		SAMPLE_TABLE.date as SAMPLE_TABLE_date
+	</sql>
+
+	<select id="selectOne" resultMap="BaseResultMap">
+		/* sample.selectOneByChatId */
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM demo.sample SAMPLE_TABLE
+		WHERE id = #{id,jdbcType=DECIMAL}
+	</select>
+
+</mapper>

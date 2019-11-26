@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: frontend
+  profiles:
+    active: local # default active profile. can be overridden with run argument like `java ... --spring.profiles.active=real`
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+
+---
+# profile specific properties
+spring:
+  profiles: local
+server:
+  error:
+    whitelabel:
+      enabled: true
