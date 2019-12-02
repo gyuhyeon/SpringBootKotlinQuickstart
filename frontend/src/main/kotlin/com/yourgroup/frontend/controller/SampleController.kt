@@ -1,4 +1,4 @@
-package com.yourgroup.controller
+package com.yourgroup.frontend.controller
 
 import com.yourgroup.module.basics.service.SampleService
 import com.yourgroup.module.datetimeformatbug.POJO

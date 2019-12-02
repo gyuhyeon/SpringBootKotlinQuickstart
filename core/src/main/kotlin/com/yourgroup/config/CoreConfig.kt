@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service
  * @author Gyuhyeon Lee (mark3236@gmail.com)
  * @since 2019. 11. 25.
  */
-@ComponentScan(basePackages = ["com.yourgroup"], useDefaultFilters = false,
+@ComponentScan(basePackages = ["com.yourgroup.config", "com.yourgroup.module"], useDefaultFilters = false,
     includeFilters = [
         ComponentScan.Filter(type = FilterType.ANNOTATION, value = [Service::class]),
         ComponentScan.Filter(type = FilterType.ANNOTATION, value = [Component::class]),
@@ -20,5 +20,4 @@ import org.springframework.stereotype.Service
         ComponentScan.Filter(type = FilterType.ANNOTATION, value = [Configuration::class])
     ])
 @Configuration
-@PropertySource("classpath:properties/core.properties", "classpath:properties/db.properties")
 class CoreConfig

@@ -8,6 +8,16 @@ This is a sample project made with IndustryStandards™ unironically.
 It has all the basic stuff you'll need for bootstrapping most projects you want to create, with minimum hassle.  
 It's also great for school projects and such when you want to flex with proper project structure for no reason.  
 
+## What does it have?
+- Multi-module setup where each module is independent except the shared core module
+- Java/Kotlin interop if you're into that stuff (or you need to gradually convert your own project to Kotlin)
+  - note: Kotlin is compiled after Java, which has pitfalls like:
+    - if you attempt to use a Lombok `@Getter` annotated java class in a kotlin class in the same module, you won't be able to access the getters.
+    - however, if they're in a separate maven module(like `frontend` and `core` here), it's ok.
+- Database integration with mybatis sql mapper the good ol' fashioned way
+- Frontend server configuration with Thymeleaf templates
+- API server configuration with custom RestTemplates for consuming external API
+
 ## How to use
 You'll need a server, a mysql database, and more depending on the modules you'd like to use.
 
